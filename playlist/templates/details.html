@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<ul>
+    {% for i in Songg %}
+
+<b><p style="text-align: center; font-size:larger;">{{i.Name}}</p></b>
+<li>{{i.Singer}}</li>
+<li>{{i.Album}}</li>
+<li>{{i.Link}}</li>
+<a href="http://127.0.0.1:8000/update/{{i.id}}"><button class="btn btn-danger">UPDATE SONG</button></a>
+<a href="http://127.0.0.1:8000/delete/{{i.id}}"><button class="btn btn-danger">DELETE SONG</button></a>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
