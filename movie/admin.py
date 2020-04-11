@@ -1,4 +1,4 @@
 from django.contrib import admin
-from playlist.models import song
+from movie.models import movies
 # Register your models here.
-admin.site.register(song)
+admin.site.register(movies)

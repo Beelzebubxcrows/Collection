@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 # Create your views here.
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'home.html')
 
 
 class CreateSong(CreateView):
@@ -19,9 +19,10 @@ def listsong(request):
     return render(request, 'list.html', {'Song':Song})
 
 
-def detailsong(request,pk):
+def detailsong(request, pk):
     Songg = song.objects.all().filter(pk=pk)
     return render(request, 'details.html', {'Songg':Songg})
+
 
 
 class DeleteSong(DeleteView):
@@ -31,5 +32,6 @@ class DeleteSong(DeleteView):
 
 class UpdateSong(UpdateView):
     model = song
-    fields=['Album', 'Singer', 'Link']
+    fields=['Album', 'Singer', 'Link', 'Name']
+    template_name="playlist/song_update.html"
     

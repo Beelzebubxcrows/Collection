@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<h2><p style="text-align: center;">YOUR FAVORITE GAMES</p></h2>
+{%for i in Game%}
+<h2><a href="{{i.id}}">{{i.Name}}</a></h2>
+{% endfor %}
+<br>
+<a href="http://127.0.0.1:8000/addgame/"><button class="btn btn-primary"> ADD A GAME</button></a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<ul>
+    {% for i in Moviee%}
+
+<b><h1><p>{{i.Name}}</p></h1></b>
+
+<table>
+<tr><td>GENRE :</td><td>{{i.Genre}}</td></tr>
+
+<tr><td>YEAR :</td><td>{{i.Year}}</td></tr>
+
+</table>
+
+
+<br><br>
+<p><a href="http://127.0.0.1:8000/updatemovie/{{i.id}}"><button class="btn btn-danger">UPDATE MOVIE</button></a>
+    <a href="http://127.0.0.1:8000/deletemovie/{{i.id}}"><button class="btn btn-danger">DELETE MOVIE</button></a>
+</p>
+
+{% endfor %}
+</ul>
+
+<style>
+    p{
+        text-align: center;
+        
+    }
+    button{
+        
+        
+    }
+    td{
+        font-weight: 300;
+        font-size:x-large;
+    }
+    table{
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+</style>
+
+{% endblock %}

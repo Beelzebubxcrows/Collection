@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from playlist import views
+from movie import views as v1
+from games import views as v2
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
@@ -25,4 +27,15 @@ urlpatterns = [
     url('^songlist/(?P<pk>[-\w]+)/$', views.detailsong),
     url('^delete/(?P<pk>[-\w]+)/$',views.DeleteSong.as_view()),
     url('^update/(?P<pk>[-\w]+)/$',views.UpdateSong.as_view()),
+    url('addmovies/',v1.AddMovie.as_view()),
+    url('^movieslist/$',v1.movielist, name="movielist"),
+    url('^movieslist/(?P<pk>[-\w]+)/$', v1.detailmovies),
+     url('^deletemovie/(?P<pk>[-\w]+)/$',v1.DeleteMovie.as_view()),
+      url('^updatemovie/(?P<pk>[-\w]+)/$',v1.UpdateMovie.as_view()),
+      url('^gameslist/$',v2.gamelist, name="gamelist"),
+      url('^addgame/$',v2.CreateGame.as_view()),
+      url('^gameslist/(?P<pk>[-\w]+)/$',v2.gamedetails),
+       url('^deletegame/(?P<pk>[-\w]+)/$',v2.DeleteGame.as_view()),
+      url('^updategame/(?P<pk>[-\w]+)/$',v2.UpdateGame.as_view()),
+   
 ]

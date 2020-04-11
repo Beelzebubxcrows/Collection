@@ -1,8 +1,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,12 +13,15 @@
 <li class="navbar-brand">
     <a class="nav-link" href="http://127.0.0.1:8000/songlist/">PLAYLIST</a>
   </li>
+ 
   <li class="navbar-brand">
-    <a class="nav-link" href="http://127.0.0.1:8000/admin/">ADMIN</a>
+    <a class="nav-link" href="http://127.0.0.1:8000/movieslist/">MOVIES</a>
   </li>
   <li class="navbar-brand">
-    <a class="nav-link" href="#">LOGOUT</a>
+    <a class="nav-link" href="http://127.0.0.1:8000/gameslist/">GAMES</a>
   </li>
+
+
 </ul>
 
 
@@ -26,7 +29,7 @@
 <div class="jumbotron">
 
     {% block content%}
-
+    
     {%endblock%}
     
 
@@ -38,3 +41,4 @@
 
 
 </html>
+

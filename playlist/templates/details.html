@@ -3,15 +3,61 @@
 {% block content%}
 <ul>
     {% for i in Songg %}
+    <p>
+        <iframe width="560" height="315" id="player" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    </p>
+    <br><br><br>
+<b><h1><p>{{i.Name}}</p></h1></b>
 
-<b><p style="text-align: center; font-size:larger;">{{i.Name}}</p></b>
-<li>{{i.Singer}}</li>
-<li>{{i.Album}}</li>
-<li>{{i.Link}}</li>
-<a href="http://127.0.0.1:8000/update/{{i.id}}"><button class="btn btn-danger">UPDATE SONG</button></a>
-<a href="http://127.0.0.1:8000/delete/{{i.id}}"><button class="btn btn-danger">DELETE SONG</button></a>
+<table>
+<tr><td>SINGER / BAND :</td><td>{{i.Singer}}</td></tr>
+
+<tr><td>ALBUM / MOVIE :</td><td>{{i.Album}}</td></tr>
+
+<tr><td>YOUTUBE LINK :</td><td id="link">{{i.Link}}</td></tr>
+
+</table>
+
+
+<br><br>
+<p><a href="http://127.0.0.1:8000/update/{{i.id}}"><button class="btn btn-danger">UPDATE SONG</button></a>
+    <a href="http://127.0.0.1:8000/delete/{{i.id}}"><button class="btn btn-danger">DELETE SONG</button></a>
+</p>
 
 {% endfor %}
 </ul>
 
+<style>
+    p{
+        text-align: center;
+        
+    }
+    button{
+        
+        
+    }
+    td{
+        font-weight: 300;
+        font-size:x-large;
+    }
+    table{
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+</style>
+<script>
+var g= document.getElementById("link").innerHTML;
+console.log(g);
+var p= g.lastIndexOf("/");
+var k=g.slice(p+1);
+console.log(k);
+var h="https://www.youtube.com/embed/"+k;
+console.log(h);
+document.getElementById("player").src=h;
+
+
+</script>
 {% endblock %}

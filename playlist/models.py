@@ -5,7 +5,7 @@ class song(models.Model):
     Name = models.CharField(max_length=20, blank = False)
     Singer = models.CharField(max_length=15, blank = False)
     Album = models.CharField(max_length=15, blank= True)
-    Link = models.URLField(blank=False)
+    Link = models.URLField(blank=True)
 
 
     def __str__(self):
@@ -14,4 +14,5 @@ class song(models.Model):
 
     def get_absolute_url(self):
         return reverse('list',)
+
 

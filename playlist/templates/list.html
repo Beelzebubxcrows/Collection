@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block content%}
-
+<h2><p style="text-align: center;">YOUR FAVORITE SONGS</p></h2>
 {%for i in Song%}
 <h2><a href="{{i.id}}">{{i.Name}}</a></h2>
 {% endfor %}

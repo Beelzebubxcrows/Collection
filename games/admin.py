@@ -1,4 +1,6 @@
 from django.contrib import admin
-from playlist.models import song
+from games.models import game
+
+
+admin.site.register(game)
 # Register your models here.
-admin.site.register(song)
