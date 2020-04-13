@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet"> 
+    
+    </head>
+
+<body>
+   <p>
+    
+    
+    <div>
+        <p> WELCOME TO LOST AND FOUND</p>
+        <form method="POST" >
+        
+        {%csrf_token%}
+        {{form.as_p}}
+            <p><button type="submit" class="btn btn-dark">LOG IN</button>
+        </p>
+        </form>
+        <p><a href="http://127.0.0.1:8000/register/">New User? Sign Up</a>
+    </p></div>
+    
+    
+    
+    
+    </p> 
+    </body>
+
+    
+</html>
+
+<style>
+    body{
+        font-family: 'Anton', sans-serif;
+    }
+    div{
+       margin-top:2.5cm;
+       width:60%; 
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid grey;
+      
+    }p{
+        text-align: center;
+    }
+    body{
+        background-color: black;
+    }
+    
+</style>

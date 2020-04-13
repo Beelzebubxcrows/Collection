@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <ul>
     <li class="navbar-brand">
-        <a class="nav-link" href="http://127.0.0.1:8000/">HOME</a>
+        <a class="nav-link" href="http://127.0.0.1:8000/home/">HOME</a>
       </li>
 <li class="navbar-brand">
     <a class="nav-link" href="http://127.0.0.1:8000/songlist/">PLAYLIST</a>
@@ -20,6 +20,10 @@
   <li class="navbar-brand">
     <a class="nav-link" href="http://127.0.0.1:8000/gameslist/">GAMES</a>
   </li>
+  <li class="navbar-brand">
+    <a class="nav-link" href="http://127.0.0.1:8000/logout/">LOGOUT</a>
+  </li>
+
 
 
 </ul>
@@ -27,11 +31,16 @@
 
 </nav>
 <div class="jumbotron">
-
+  {% if user.is_authenticated%}
     {% block content%}
     
     {%endblock%}
     
+  {% else %}
+  <li class="navbar-brand">
+    <a class="nav-link" href="http://127.0.0.1:8000/login/">LOGIN FIRST!!!</a>
+  </li>
+  {% endif %}
 
 </div>
 

@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from playlist import views
 from movie import views as v1
 from games import views as v2
+from register import views as v4
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
+       url(r'^register/',v4.register),
+    url(r'',include("django.contrib.auth.urls")),
+    url(r'^home/$',views.home),
     path('addsong/',views.CreateSong.as_view()),
     path('songlist/', views.listsong, name="list"),
     url('^songlist/(?P<pk>[-\w]+)/$', views.detailsong),
