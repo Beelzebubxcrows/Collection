@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 # Create your models here.
 class movies(models.Model):
+    user= models.CharField(max_length=100, blank=True)
     Name= models.CharField(blank=False, max_length = 20)
     Year = models.IntegerField(blank=True)
     Genre = models.CharField(blank= False , max_length= 10)
@@ -10,5 +11,5 @@ class movies(models.Model):
         return self.Name
 
     def get_absolute_url(self):
-        return reverse('movielist',)
+        return reverse('home',)
 

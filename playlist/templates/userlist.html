@@ -10,16 +10,7 @@
     <li class="navbar-brand">
         <a class="nav-link" href="http://127.0.0.1:8000/home/">HOME</a>
       </li>
-<li class="navbar-brand">
-    <a class="nav-link" href="http://127.0.0.1:8000/songlists/{{user.username}}/">PLAYLIST</a>
-  </li>
- 
-  <li class="navbar-brand">
-    <a class="nav-link" href="http://127.0.0.1:8000/movieslists/{{user.username}}">MOVIES</a>
-  </li>
-  <li class="navbar-brand">
-    <a class="nav-link" href="http://127.0.0.1:8000/gameslists/{{user.username}}">GAMES</a>
-  </li>
+
   <li class="navbar-brand">
     <a class="nav-link" href="http://127.0.0.1:8000/people/">PEOPLE'S PLAYLIST</a>
   </li>
@@ -43,23 +34,19 @@
 </nav>
 <div class="jumbotron">
  
-  {% if user.is_authenticated%}
-    {% block content%}
+ 
     
-    {%endblock%}
-    
-  {% else %}
-  <li class="navbar-brand">
-    <a class="nav-link" href="http://127.0.0.1:8000/login/">LOGIN FIRST!!!</a>
-  </li>
-  {% endif %}
-
+ 
+{%for i in user%}
+<h2><a href="http://127.0.0.1:8000/songlists/{{i.username}}/">{{i.username}}</a></h2>
+{% endfor %}
+<br>
 </div>
-
 </body>
 
 
 
 
 </html>
+
 

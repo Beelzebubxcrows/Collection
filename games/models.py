@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 
 class game(models.Model):
+    user= models.CharField(max_length=100, blank=True)
     Name = models.CharField(max_length=50, blank= False)
     Genre = models.CharField(max_length=20, blank=False)
     Platform = models.CharField(max_length=20, blank = False)
@@ -15,4 +16,4 @@ class game(models.Model):
 
     def get_absolute_url(self):
 
-        return reverse("gamelist")
+        return reverse("home")

@@ -21,24 +21,30 @@ from movie import views as v1
 from games import views as v2
 from register import views as v4
 urlpatterns = [
+    url(r'^userr/$', views.userggg),
     path('admin/', admin.site.urls),
        url(r'^register/',v4.register),
     url(r'',include("django.contrib.auth.urls")),
-    url(r'^home/$',views.home),
+    url(r'^home/$',views.home, name="home"),
     path('addsong/',views.CreateSong.as_view()),
-    path('songlist/', views.listsong, name="list"),
-    url('^songlist/(?P<pk>[-\w]+)/$', views.detailsong),
+    path('songlists/<username>/', views.listsong, name="list"),
+    path('songlist/<username>/<pk>/', views.detailsong),
     url('^delete/(?P<pk>[-\w]+)/$',views.DeleteSong.as_view()),
     url('^update/(?P<pk>[-\w]+)/$',views.UpdateSong.as_view()),
     url('addmovies/',v1.AddMovie.as_view()),
-    url('^movieslist/$',v1.movielist, name="movielist"),
-    url('^movieslist/(?P<pk>[-\w]+)/$', v1.detailmovies),
+    path('movieslists/<username>/',v1.movielist, name="movielist"),
+    path('movieslist/<username>/<pk>/', v1.detailmovies),
      url('^deletemovie/(?P<pk>[-\w]+)/$',v1.DeleteMovie.as_view()),
       url('^updatemovie/(?P<pk>[-\w]+)/$',v1.UpdateMovie.as_view()),
-      url('^gameslist/$',v2.gamelist, name="gamelist"),
+      path('gameslists/<username>/',v2.gamelist, name="gamelist"),
       url('^addgame/$',v2.CreateGame.as_view()),
-      url('^gameslist/(?P<pk>[-\w]+)/$',v2.gamedetails),
+      path('gameslist/<username>/<pk>/',v2.gamedetails),
        url('^deletegame/(?P<pk>[-\w]+)/$',v2.DeleteGame.as_view()),
       url('^updategame/(?P<pk>[-\w]+)/$',v2.UpdateGame.as_view()),
+      url('^people/$',views.userlist),
+      url('^peoplegames/$',v2.userlist),
+      url('^peoplemovies/$',v1.userlist),
+      
+      
    
 ]

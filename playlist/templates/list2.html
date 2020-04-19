@@ -2,12 +2,11 @@
 
 {% block content%}
 
-<h2><p style="text-align: center;">YOUR FAVORITE SONGS</p></h2>
+<h2><p style="text-align: center;">HIS FAVORITE SONGS</p></h2>
 
 {%for i in Song%}
 
 <h2><a href="http://127.0.0.1:8000/songlist/{{i.user}}/{{i.id}}">{{i.Name}}</a></h2>
 {% endfor %}
-<br>
-<a href="http://127.0.0.1:8000/addsong/"><button class="btn btn-primary"> ADD A SONG</button></a>
+
 {% endblock %}

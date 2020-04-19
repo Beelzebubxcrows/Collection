@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<ul>
+    {% for i in Moviee%}
+
+<b><h1><p>{{i.Name}}</p></h1></b>
+
+<table>
+<tr><td>GENRE :</td><td>{{i.Genre}}</td></tr>
+
+<tr><td>YEAR :</td><td>{{i.Year}}</td></tr>
+
+</table>
+
+
+
+{% endfor %}
+</ul>
+
+<style>
+    p{
+        text-align: center;
+        
+    }
+    button{
+        
+        
+    }
+    td{
+        font-weight: 300;
+        font-size:x-large;
+    }
+    table{
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+</style>
+
+{% endblock %}
